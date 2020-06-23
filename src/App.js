@@ -1,39 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/Header"
+import Container from "./components/Container";
+import Wrapper from "./components/Wrapper";
+import ZooCard from "./components/ZooCard";
+import zoo from "./zoo.json";
 
-// this looks like html but is jsx
-// class is reserved for javascript, so in jsx we use className 
+class App extends Component {
+  // Setting this.state.zoo to the friends json array
+  state = {
+    zoo: zoo
+  };
 
-function App() {
-  // the parentheses after return allow us to separate our jsx into more than one
-    // line for better readability
-  return (
-    // Fragments are unique to React
-    // Within jsx we can wrap a blank tag, or a fragment, in order to add content to our function, 
-    // because we can only return One Thing
-    <>
-      <div className="App">
-        <header className="App-header">
-          {/* logo is a javascript variable that we imported at the top  */}
-          {/* in order to use javascript in jsx we surround it with curly braces  */}
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-      <p>This is a paragraph.</p>
-    </>
-  );
+  // Map over this.state.zoo and render a ZooCard component for each zoo object
+  render() {
+    return (
+      <>
+      <Header backgroundImage="../../zooHeader.jpg"></Header>
+      <Container>
+      <Wrapper>
+        {this.state.zoo.map(zoo => (
+          <ZooCard
+          id={zoo.id}
+          key={zoo.id}
+          image={zoo.image}
+          />
+        ))}
+      </Wrapper>
+      </Container>
+      </>
+    );
+  }
 }
 
 export default App;
