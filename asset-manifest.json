@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/zootopia/static/css/main.1e6198aa.chunk.css",
+    "main.js": "/zootopia/static/js/main.ad1eb5d1.chunk.js",
+    "main.js.map": "/zootopia/static/js/main.ad1eb5d1.chunk.js.map",
+    "runtime-main.js": "/zootopia/static/js/runtime-main.a31d2ffb.js",
+    "runtime-main.js.map": "/zootopia/static/js/runtime-main.a31d2ffb.js.map",
+    "static/js/2.5f183159.chunk.js": "/zootopia/static/js/2.5f183159.chunk.js",
+    "static/js/2.5f183159.chunk.js.map": "/zootopia/static/js/2.5f183159.chunk.js.map",
+    "index.html": "/zootopia/index.html",
+    "precache-manifest.8428e682080ad1b6a55bece3a9f1274d.js": "/zootopia/precache-manifest.8428e682080ad1b6a55bece3a9f1274d.js",
+    "service-worker.js": "/zootopia/service-worker.js",
+    "static/css/main.1e6198aa.chunk.css.map": "/zootopia/static/css/main.1e6198aa.chunk.css.map",
+    "static/js/2.5f183159.chunk.js.LICENSE.txt": "/zootopia/static/js/2.5f183159.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a31d2ffb.js",
+    "static/js/2.5f183159.chunk.js",
+    "static/css/main.1e6198aa.chunk.css",
+    "static/js/main.ad1eb5d1.chunk.js"
+  ]
+}
