@@ -5,7 +5,17 @@ import Wrapper from "./components/Wrapper";
 import ZooCard from "./components/ZooCard";
 import zoo from "./zoo.json";
 import zooHeader from "./zooHeader.jpg";
+import UIfx from "uifx";
+import clickSound from "./sounds/click.mp3"
 // import Sound from "react-sound";
+
+const sound = new UIfx(
+  clickSound,
+  {
+    volume: 0.4,
+    throttleMS: 100
+  }
+)
 
 class App extends Component {
 
@@ -18,16 +28,16 @@ class App extends Component {
   };
 
   // Play Audio Function
-  playAudio() {
-  const clickSound = document.getElementsByClassName("sound")[0]
-  clickSound.play()
-  }
+  // playAudio() {
+  // const clickSound = document.getElementsByClassName("sound")[0]
+  // clickSound.play()
+  // }
 
   clickCard=event=>{
     //run the playAudio function
-    this.playAudio();
     this.cardShuffle();
     var id= event.target.getAttribute("data-id");
+    sound.play();
     // console.log(id)
     if(this.state.clicked.includes(id)){
       // console.log("Oh-no!  You lost... Try again!")
@@ -61,13 +71,13 @@ class App extends Component {
   }
 
     // Play Audio Function
-    playAudio() {
-      const clickSound = document.getElementsByClassName("sound")[0]
-      clickSound.play()
-      }
-      return (
+    // playAudio() {
+    //   const clickSound = document.getElementsByClassName("sound")[0]
+    //   clickSound.play()
+    //   }
+    //   return (
         
-      )
+    //   )
 
   // Map over this.state.zoo and render a ZooCard component for each zoo object
   render() {
@@ -91,11 +101,11 @@ class App extends Component {
         ))}
       </Wrapper>
       {/* render the className and source for the playAudio function  */}
-      <div>
+      {/* <div>
         <audio className="sound">
           <source src="./sounds/click.mp3"></source>
         </audio>
-      </div>
+      </div> */}
       </Container>
       </>
     );

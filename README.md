@@ -26,6 +26,7 @@ How many unique clicks can you successfully make before your memory fails you?!
 * [JSX](https://reactjs.org/docs/introducing-jsx.html)
 * [ES6](https://developer.mozilla.org/en-US/docs/Archive/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla)
 * [Nodejs](https://nodejs.org/en/about/)
+* [uifx](https://www.npmjs.com/package/uifx)
 
 ## This project was created by:
 * *Jennifer Kruk* - [github](https://github.com/jenkruk)
