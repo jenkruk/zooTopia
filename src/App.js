@@ -4,9 +4,11 @@ import Container from "./components/Container";
 import Wrapper from "./components/Wrapper";
 import ZooCard from "./components/ZooCard";
 import zoo from "./zoo.json";
-import zooHeader from "./zooHeader.jpg"
+import zooHeader from "./zooHeader.jpg";
+// import Sound from "react-sound";
 
 class App extends Component {
+
   // Setting this.state.zoo
   state = {
     zoo: zoo,
@@ -15,14 +17,20 @@ class App extends Component {
     clicked: []
   };
 
+  // Play Audio Function
+  playAudio() {
+  const clickSound = document.getElementsByClassName("sound")[0]
+  clickSound.play()
+  }
+
   clickCard=event=>{
-    console.log("You have clicked on a card")
-    console.log(event.target)
+    //run the playAudio function
+    this.playAudio();
     this.cardShuffle();
     var id= event.target.getAttribute("data-id");
-    console.log(id)
+    // console.log(id)
     if(this.state.clicked.includes(id)){
-      console.log("Oh-no!  You lost... Try again!")
+      // console.log("Oh-no!  You lost... Try again!")
       alert("Oh-no!  You lost... Try again!")
       this.setState({
         clicked: [],
@@ -32,7 +40,7 @@ class App extends Component {
       var copy = [...this.state.clicked]
       copy.push(id)
       if(copy.length === 12){
-        console.log("Great job! You won!")
+        // console.log("Great job! You won!")
         alert("Great job! You won!")
       }else{
       this.setState({
@@ -43,6 +51,7 @@ class App extends Component {
     }
     }
   }
+  // Card Shuffle Function
   cardShuffle= ()=>{
     var zooSuits= [...this.state.zoo]
     zooSuits.sort((a,b)=> Math.random()-.5)
@@ -51,7 +60,14 @@ class App extends Component {
     })
   }
 
-  // ***************************************************************************** 
+    // Play Audio Function
+    playAudio() {
+      const clickSound = document.getElementsByClassName("sound")[0]
+      clickSound.play()
+      }
+      return (
+        
+      )
 
   // Map over this.state.zoo and render a ZooCard component for each zoo object
   render() {
@@ -74,6 +90,12 @@ class App extends Component {
           />
         ))}
       </Wrapper>
+      {/* render the className and source for the playAudio function  */}
+      <div>
+        <audio className="sound">
+          <source src="./sounds/click.mp3"></source>
+        </audio>
+      </div>
       </Container>
       </>
     );
