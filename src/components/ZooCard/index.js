@@ -4,9 +4,9 @@ import "./style.css";
 function ZooCard(props) {
 
   return (
-    <div className="card">
+    <div className="card" onClick={props.click}>
       <div className="img-container">
-        <img alt={props.name} key src={props.image} />
+        <img alt={props.name} key src={props.image} data-id={props.id}/>
       </div>
     </div>
   );
