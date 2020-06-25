@@ -29,7 +29,9 @@ How many unique clicks can you successfully make before your memory fails you?!
 * [uifx](https://www.npmjs.com/package/uifx)
 
 ## This project was created by:
-* *Jennifer Kruk* - [github](https://github.com/jenkruk)
+  ### Jennifer Kruk
+* [github](https://github.com/jenkruk)
+* [portfolio](https://jenkruk.github.io/Portfolio/)
 
 ## License
 
