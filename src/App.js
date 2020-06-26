@@ -7,7 +7,8 @@ import zoo from "./zoo.json";
 import zooHeader from "./zooHeader.jpg";
 import UIfx from "uifx";
 import clickSound from "./sounds/click.mp3"
-// import Sound from "react-sound";
+import winSound from "./sounds/win.wav"
+import LostModal from "./components/LostModal";
 
 const sound = new UIfx(
   clickSound,
@@ -16,6 +17,15 @@ const sound = new UIfx(
     throttleMS: 100
   }
 )
+
+const win = new UIfx(
+  winSound,
+  {
+    volume: 0.4,
+    throttleMS: 100
+  }
+)
+
 
 class App extends Component {
 
@@ -27,13 +37,8 @@ class App extends Component {
     clicked: []
   };
 
-  // Play Audio Function
-  // playAudio() {
-  // const clickSound = document.getElementsByClassName("sound")[0]
-  // clickSound.play()
-  // }
-
   clickCard=event=>{
+    const [modalShow, setModalShow] = React.useState(false);
     //run the playAudio function
     this.cardShuffle();
     var id= event.target.getAttribute("data-id");
@@ -41,7 +46,8 @@ class App extends Component {
     // console.log(id)
     if(this.state.clicked.includes(id)){
       // console.log("Oh-no!  You lost... Try again!")
-      alert("Oh-no!  You lost... Try again!")
+      // alert("Oh-no!  You lost... Try again!")
+      <LostModal show={modalShow} onHide={() => setModalShow(false)}/>
       this.setState({
         clicked: [],
         score:0,
@@ -51,6 +57,7 @@ class App extends Component {
       copy.push(id)
       if(copy.length === 12){
         // console.log("Great job! You won!")
+        win.play()
         alert("Great job! You won!")
       }else{
       this.setState({
@@ -61,6 +68,7 @@ class App extends Component {
     }
     }
   }
+
   // Card Shuffle Function
   cardShuffle= ()=>{
     var zooSuits= [...this.state.zoo]
@@ -69,15 +77,6 @@ class App extends Component {
       zoo:zooSuits
     })
   }
-
-    // Play Audio Function
-    // playAudio() {
-    //   const clickSound = document.getElementsByClassName("sound")[0]
-    //   clickSound.play()
-    //   }
-    //   return (
-        
-    //   )
 
   // Map over this.state.zoo and render a ZooCard component for each zoo object
   render() {
@@ -100,12 +99,6 @@ class App extends Component {
           />
         ))}
       </Wrapper>
-      {/* render the className and source for the playAudio function  */}
-      {/* <div>
-        <audio className="sound">
-          <source src="./sounds/click.mp3"></source>
-        </audio>
-      </div> */}
       </Container>
       </>
     );
