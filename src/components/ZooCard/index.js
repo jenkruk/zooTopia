@@ -6,7 +6,7 @@ function ZooCard(props) {
   return (
     <div className="card" onClick={props.click}>
       <div className="img-container">
-        <img alt={props.name} key src={props.image} data-id={props.id}/>
+        <img alt={props.name} key src={process.env.PUBLIC_URL + props.image} data-id={props.id}/>
       </div>
     </div>
   );

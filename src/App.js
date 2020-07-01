@@ -6,8 +6,9 @@ import ZooCard from "./components/ZooCard";
 import zoo from "./zoo.json";
 import zooHeader from "./zooHeader.jpg";
 import UIfx from "uifx";
-import clickSound from "./sounds/click.mp3"
-import winSound from "./sounds/win.wav"
+import clickSound from "./sounds/click.mp3";
+import winSound from "./sounds/win.mp3";
+// import Modal from 'react-modal';
 import LostModal from "./components/LostModal";
 
 const sound = new UIfx(
@@ -28,7 +29,7 @@ const win = new UIfx(
 
 
 class App extends Component {
-
+  
   // Setting this.state.zoo
   state = {
     zoo: zoo,
@@ -38,33 +39,32 @@ class App extends Component {
   };
 
   clickCard=event=>{
-    const [modalShow, setModalShow] = React.useState(false);
-    //run the playAudio function
+
     this.cardShuffle();
     var id= event.target.getAttribute("data-id");
-    sound.play();
     // console.log(id)
     if(this.state.clicked.includes(id)){
       // console.log("Oh-no!  You lost... Try again!")
+
       // alert("Oh-no!  You lost... Try again!")
-      <LostModal show={modalShow} onHide={() => setModalShow(false)}/>
       this.setState({
         clicked: [],
         score:0,
       })
-    }else{
+    } else {
       var copy = [...this.state.clicked]
       copy.push(id)
-      if(copy.length === 12){
+      if (copy.length === 12){
         // console.log("Great job! You won!")
         win.play()
         alert("Great job! You won!")
-      }else{
+      } else {
       this.setState({
         clicked: copy,
         score: this.state.score+1,
         topScore:(this.state.score +1>this.state.topScore) ? this.state.topScore+1 : this.state.topScore
       })
+      sound.play();
     }
     }
   }
@@ -99,6 +99,7 @@ class App extends Component {
           />
         ))}
       </Wrapper>
+      <LostModal/>
       </Container>
       </>
     );
