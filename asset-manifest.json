@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/zootopia/static/css/main.d7067239.chunk.css",
-    "main.js": "/zootopia/static/js/main.073fe3fe.chunk.js",
-    "main.js.map": "/zootopia/static/js/main.073fe3fe.chunk.js.map",
+    "main.css": "/zootopia/static/css/main.1e3f8623.chunk.css",
+    "main.js": "/zootopia/static/js/main.10734782.chunk.js",
+    "main.js.map": "/zootopia/static/js/main.10734782.chunk.js.map",
     "runtime-main.js": "/zootopia/static/js/runtime-main.a31d2ffb.js",
     "runtime-main.js.map": "/zootopia/static/js/runtime-main.a31d2ffb.js.map",
     "static/js/2.daea60cf.chunk.js": "/zootopia/static/js/2.daea60cf.chunk.js",
     "static/js/2.daea60cf.chunk.js.map": "/zootopia/static/js/2.daea60cf.chunk.js.map",
     "index.html": "/zootopia/index.html",
-    "precache-manifest.b49ca5427be02815e70dcef74ea1919a.js": "/zootopia/precache-manifest.b49ca5427be02815e70dcef74ea1919a.js",
+    "precache-manifest.e7d14d6e23dedeb6610287ac9be6ef76.js": "/zootopia/precache-manifest.e7d14d6e23dedeb6610287ac9be6ef76.js",
     "service-worker.js": "/zootopia/service-worker.js",
-    "static/css/main.d7067239.chunk.css.map": "/zootopia/static/css/main.d7067239.chunk.css.map",
+    "static/css/main.1e3f8623.chunk.css.map": "/zootopia/static/css/main.1e3f8623.chunk.css.map",
     "static/js/2.daea60cf.chunk.js.LICENSE.txt": "/zootopia/static/js/2.daea60cf.chunk.js.LICENSE.txt",
     "static/media/Edwin.jpg": "/zootopia/static/media/Edwin.08673cb1.jpg",
     "static/media/Seal.jpg": "/zootopia/static/media/Seal.0d135f6d.jpg",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.a31d2ffb.js",
     "static/js/2.daea60cf.chunk.js",
-    "static/css/main.d7067239.chunk.css",
-    "static/js/main.073fe3fe.chunk.js"
+    "static/css/main.1e3f8623.chunk.css",
+    "static/js/main.10734782.chunk.js"
   ]
 }
