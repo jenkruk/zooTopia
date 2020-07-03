@@ -4,14 +4,16 @@ import Container from "./components/Container";
 import Wrapper from "./components/Wrapper";
 import ZooCard from "./components/ZooCard";
 import zoo from "./zoo.json";
-import zooHeader from "./zooHeader.jpg";
+import zooHeader from "./images/zooHeader.jpg";
 import UIfx from "uifx";
 import clickSound from "./sounds/click.mp3";
-import winSound from "./sounds/win.mp3";
-// import Modal from 'react-modal';
+import loseSound from "./sounds/gong.mp3"
+import wonSound from "./sounds/win.mp3";
 import LostModal from "./components/LostModal";
+import WonModal from "./components/WonModal";
 
-const sound = new UIfx(
+
+const click = new UIfx(
   clickSound,
   {
     volume: 0.4,
@@ -19,14 +21,21 @@ const sound = new UIfx(
   }
 )
 
-const win = new UIfx(
-  winSound,
+const lost = new UIfx(
+  loseSound,
   {
-    volume: 0.4,
+    volume: 0.2,
     throttleMS: 100
   }
 )
 
+const won = new UIfx(
+  wonSound,
+  {
+    volume: 0.2,
+    throttleMS: 100
+  }
+)
 
 class App extends Component {
   
@@ -35,8 +44,16 @@ class App extends Component {
     zoo: zoo,
     score: 0,
     topScore: 0,
-    clicked: []
+    clicked: [],
+    showLostModal: false,
+    showWonModal: false
   };
+
+  hideModal = () => {
+    this.setState ({showLostModal: false})
+    this.setState ({showWonModal: false})
+  }
+
 
   clickCard=event=>{
 
@@ -44,9 +61,8 @@ class App extends Component {
     var id= event.target.getAttribute("data-id");
     // console.log(id)
     if(this.state.clicked.includes(id)){
-      // console.log("Oh-no!  You lost... Try again!")
-
-      // alert("Oh-no!  You lost... Try again!")
+      lost.play();
+      this.setState({showLostModal: true});
       this.setState({
         clicked: [],
         score:0,
@@ -55,16 +71,20 @@ class App extends Component {
       var copy = [...this.state.clicked]
       copy.push(id)
       if (copy.length === 12){
-        // console.log("Great job! You won!")
-        win.play()
-        alert("Great job! You won!")
+        won.play();
+        this.setState({
+          showWonModal: true,
+          score: 0,
+          topScore:this.state.score+1,
+          clicked: []
+        });
       } else {
       this.setState({
         clicked: copy,
         score: this.state.score+1,
         topScore:(this.state.score +1>this.state.topScore) ? this.state.topScore+1 : this.state.topScore
       })
-      sound.play();
+      click.play();
     }
     }
   }
@@ -99,7 +119,8 @@ class App extends Component {
           />
         ))}
       </Wrapper>
-      <LostModal/>
+      <LostModal status={this.state.showLostModal} hideModal={this.hideModal}/>
+      <WonModal status={this.state.showWonModal} hideModal={this.hideModal}/>
       </Container>
       </>
     );

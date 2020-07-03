@@ -1,53 +1,24 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
-import UIfx from "uifx";
-import loseSound from "../../sounds/gong.mp3"
+import Seal from '../../images/Seal.jpg';
+import './style.css';
 
-// https://www.pluralsight.com/guides/working-with-bootstraps-modals-react 
-
-
-
-const LostModal = () => {
-
-    const lose = new UIfx(
-      loseSound,
-      {
-        volume: 0.4,
-        throttleMS: 100
-      }
-    )
-
-    const [isOpen, setIsOpen] = React.useState(false);
-
-    const showModal = () => {
-      setIsOpen(true);
-      lose.play();
-    };
-
-    const hideModal = () => {
-        setIsOpen(false);
-    };
+const LostModal = (props) => {
     
     return (
     <>
-    <button onClick={showModal}>Display Modal</button>
-      <Modal show={isOpen} onHide={hideModal}>
-        <Modal.Header closeButton>
+      <Modal className="modal" show={props.status}>
+        <Modal.Header className="d-flex justify-content-center">
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            <img src={Seal} alt="OH NO!"/>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+        <Modal.Body className="d-flex justify-content-center text-center">
+          <h3 className="modalText">Uh oh! <br/> You already clicked that card! <br/> Please try again. </h3>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={hideModal}>Close</Button>
+          <Button className="modalClose" onClick={props.hideModal}>Close</Button>
         </Modal.Footer>
       </Modal>
       </>
