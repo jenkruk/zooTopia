@@ -1,6 +1,6 @@
 # Zootopia Memory Game
 
-![ZOO](./src/zooHeader.jpg)
+![ZOO](./src/images/zooHeader.jpg)
 
 Click on each zoo card only once! 
 
