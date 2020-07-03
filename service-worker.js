@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/zootopia/precache-manifest.179aa6fcbcf069a632797dc2f10e8a15.js"
+  "/zootopia/precache-manifest.b49ca5427be02815e70dcef74ea1919a.js"
 );
 
 self.addEventListener('message', (event) => {
