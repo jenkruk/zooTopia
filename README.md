@@ -8,8 +8,11 @@ Be careful... the cards will shuffle after each click!
 
 How many unique clicks can you successfully make before your memory fails you?!
 
-## Giphy Demo
-![GIPHY DEMO](./public/zooGiphy.gif)
+## Giphy Demo - lost
+![GIPHY DEMO](./public/lost.gif)
+
+## Giphy Demo - won
+![GIPHY DEMO](./public/won.gif)
 
 ## GO TO SITE
 

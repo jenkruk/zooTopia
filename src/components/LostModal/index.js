@@ -8,17 +8,17 @@ const LostModal = (props) => {
     
     return (
     <>
-      <Modal className="modal" show={props.status}>
+      <Modal className="lostModal" show={props.status}>
         <Modal.Header className="d-flex justify-content-center">
           <Modal.Title id="contained-modal-title-vcenter">
             <img src={Seal} alt="OH NO!"/>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="d-flex justify-content-center text-center">
-          <h3 className="modalText">Uh oh! <br/> You already clicked that card! <br/> Please try again. </h3>
+          <h3 className="lostModalText">Uh oh! <br/> You already clicked that card! <br/> Please try again. </h3>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="modalClose" onClick={props.hideModal}>Close</Button>
+          <Button className="lostModalClose" onClick={props.hideModal}>Close</Button>
         </Modal.Footer>
       </Modal>
       </>

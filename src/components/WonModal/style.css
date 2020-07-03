@@ -1,16 +1,16 @@
-.modal {
+.wonModal {
     font-family: 'Crimson Text', serif;
 }
 
-.modalText {
+.wonModalText {
     color: #E48897;
 }
 
-.modalClose {
+.wonModalClose {
     background-color: #E48897;
     border: none;
 }
 
-.modalClose:hover {
+.wonModalClose:hover {
     background-color: #B7CFCF;
 }

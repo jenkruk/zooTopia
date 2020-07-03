@@ -1,16 +1,16 @@
-.modal {
+.lostModal {
     font-family: 'Crimson Text', serif;
 }
 
-.modalText {
+.lostModalText {
     color: #B25C2E;
 }
 
-.modalClose {
+.lostModalClose {
     background-color: #B25C2E;
     border: none;
 }
 
-.modalClose:hover {
+.lostModalClose:hover {
     background-color: #B7CFCF;
 }
