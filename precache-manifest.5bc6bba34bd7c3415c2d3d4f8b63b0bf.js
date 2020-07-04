@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "30f2deeebf5916b1c1b1b218100ea4b7",
+    "revision": "bc220c6352cc5059a35ae6e414d750c7",
     "url": "/zootopia/index.html"
   },
   {
-    "revision": "fb46b32558fb1c83ceb1",
+    "revision": "20cff8c321a8471f05e9",
     "url": "/zootopia/static/css/main.1e3f8623.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zootopia/static/js/2.daea60cf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fb46b32558fb1c83ceb1",
-    "url": "/zootopia/static/js/main.10734782.chunk.js"
+    "revision": "20cff8c321a8471f05e9",
+    "url": "/zootopia/static/js/main.99173b83.chunk.js"
   },
   {
     "revision": "358c68da353b0a17a99c",
