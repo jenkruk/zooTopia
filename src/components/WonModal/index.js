@@ -15,7 +15,7 @@ const WonModal = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="d-flex justify-content-center text-center">
-          <h3 className="wonModalText">Congratulations! <br/> You won!!!! </h3>
+          <h3 className="wonModalText">Congratulations! <br/> You won!!! </h3>
         </Modal.Body>
         <Modal.Footer>
           <Button className="wonModalClose" onClick={props.hideModal}>Close</Button>

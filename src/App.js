@@ -7,7 +7,7 @@ import zoo from "./zoo.json";
 import zooHeader from "./images/zooHeader.jpg";
 import UIfx from "uifx";
 import clickSound from "./sounds/click.mp3";
-import loseSound from "./sounds/gong.mp3"
+import lostSound from "./sounds/gong.mp3"
 import wonSound from "./sounds/win.mp3";
 import LostModal from "./components/LostModal";
 import WonModal from "./components/WonModal";
@@ -22,7 +22,7 @@ const click = new UIfx(
 )
 
 const lost = new UIfx(
-  loseSound,
+  lostSound,
   {
     volume: 0.2,
     throttleMS: 100
@@ -57,7 +57,7 @@ class App extends Component {
 
   clickCard=event=>{
 
-    this.cardShuffle();
+    this.shuffleCards();
     var id= event.target.getAttribute("data-id");
     // console.log(id)
     if(this.state.clicked.includes(id)){
@@ -68,9 +68,9 @@ class App extends Component {
         score:0,
       })
     } else {
-      var copy = [...this.state.clicked]
-      copy.push(id)
-      if (copy.length === 12){
+      var win = [...this.state.clicked]
+      win.push(id)
+      if (win.length === 12){
         won.play();
         this.setState({
           showWonModal: true,
@@ -80,7 +80,7 @@ class App extends Component {
         });
       } else {
       this.setState({
-        clicked: copy,
+        clicked: win,
         score: this.state.score+1,
         topScore:(this.state.score +1>this.state.topScore) ? this.state.topScore+1 : this.state.topScore
       })
@@ -90,7 +90,7 @@ class App extends Component {
   }
 
   // Card Shuffle Function
-  cardShuffle= ()=>{
+  shuffleCards= ()=>{
     var zooSuits= [...this.state.zoo]
     zooSuits.sort((a,b)=> Math.random()-.5)
     this.setState({
